@@ -1,0 +1,108 @@
+<div *ngIf="user" class = "body">
+    <div  class="container">
+        <h3>ToDo List</h3><br>
+        <div class="row">
+            TaskName:
+            <div class="col-3">
+            
+                <input class="inputtask" (keyup.enter)="AddList()" id="new-task" type="text" placeholder ="Enter the Taskname" [(ngModel)]="task" name ="task">
+            </div>
+            <div class="category col-3">
+                Task Category:
+                <select [(ngModel)]="category">
+                    <option selected>Select Category</option>
+                    <option>Personal</option>
+                    <option>Work</option>
+                    <option>Fun</option>
+                    <option>Events</option>
+                </select> 
+            </div>
+            <div class="col-3">
+                Task Priority:
+                <select [(ngModel)]="priority">
+                    <option selected>Select Priority</option>
+                    <option>High</option>
+                    <option>Medium</option>
+                    <option>Low</option>
+                </select> 
+            </div>
+            <div class="col-3">
+                <button class="butAdd" (click) ="AddList()">Add</button>
+            </div>
+        </div>
+        
+        <div class ="row para">
+            <p style="margin-left:150px">View task:</p>
+            <p style="margin-left:350px">Search for task:</p>
+            </div>
+            <div class="row">
+                
+                    <select class=" col-4 filter" [(ngModel)]="filter" placeholder="Filter">
+                        <option>Filter</option>
+                        <option value="alltask">All Tasks</option>
+                        <option value="completed">Completed</option>
+                        <option value="notcompleted">Incomplete tasks</option>
+                    </select>
+                
+                
+                    <input class="searchbox col-4" type="text" [(ngModel)]="search" placeholder="Search tasks">
+                
+            </div>
+        
+         <h3>Tasks Todo</h3>
+         <div class="tablecls">
+        <table>
+            <tr>
+            <th>Task Name</th>
+            <th>Category</th>
+            <th>Created Date</th> 
+            <th>Priority</th>
+            <th>Actions</th>
+
+            </tr>
+            <tr *ngFor="let item of items | async | search:search | filter:filter ">
+                <td>{{ item.taskname }}</td>
+                <td>{{ item.category }}</td>
+                <td>{{ item.date.seconds * 1000 | date:'dd-MM-yyyy' }}</td>
+                <td>{{item.priority }}</td>
+                <td>
+                    <input type="checkbox" [ngModel] = "item.taskstatus" (ngModelChange) ="changeStatus(item)">
+                    <i class="fa fa-edit" *ngIf ="item.taskstatus ===false" (click)="modified(item)"></i>
+                    <i class="fa fa-trash" (click)="deleteItem(item)"></i>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+        <div>
+                <div *ngIf = "itemToEdit ===true" class="row updateTask"> 
+                    Taskname: 
+                    <input class = "col-3" type="text" [(ngModel)]="itemList.taskname" style="margin:3px;">
+                        <div class="category col-3">
+                            Task Category:
+                            <select [(ngModel)]="itemList.category">
+                                <option selected>Select Category</option>
+                                <option>Personal</option>
+                                <option>Work</option>
+                                <option>Fun</option>
+                                <option>Events</option>
+                            </select> 
+                        </div>
+                        <div class="col-3">
+                            Task Priority:
+                            <select [(ngModel)]="itemList.priority">
+                                <option selected>Select Priority</option>
+                                <option>High</option>
+                                <option>Medium</option>
+                                <option>Low</option>
+                            </select> 
+                        </div>
+                        <div class="col-3">
+                            <button class="but" (click) ="Update(itemList)">Update</button>
+                        </div>
+            </div>
+        </div>
+    
+    </div>
+</div>

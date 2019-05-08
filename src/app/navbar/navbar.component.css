@@ -1,0 +1,19 @@
+.nav {
+    background-color: black;
+    font-size: 30px;
+    color: blueviolet;    
+    
+}
+
+h2{
+    height: 50px;
+    padding-top: 10px;
+    text-align:left;
+}
+
+.btn-info{
+    margin-top: 5px;
+    float:right;
+    margin-right: 95px;
+    padding-top: 10px;
+}

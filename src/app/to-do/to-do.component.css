@@ -1,0 +1,224 @@
+/* Basic Style */
+.body {
+ 
+    background-image:linear-gradient(rgba(250, 99, 99, 0.75), rgba(113, 248, 142, 0.75)), url(https://timemanagementninja.com/wp-content/uploads/2013/02/Todos-Non-negotiable.jpg);
+    color: #333;
+    font-family: Lato, sans-serif;
+    height:100vh;
+    width:100vw;
+}
+
+table,th,td{
+    border: 1px solid gray;
+    text-align:center;
+    padding-left: 30px; 
+    padding-right: 30px;  
+
+}
+.fa-edit:hover{
+    color:gray;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size:25px;
+}
+.fa-trash:hover{
+    color: grey;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size:25px;
+}
+.tablecls {  
+    width: 900px; 
+    margin-left: 190px;
+}
+
+.container {
+    display: block;
+    width: auto;
+    border-radius: 5px;
+    background-color:rgba(200, 236, 152, 0.75);
+    padding: 25px;
+    margin-left: auto;
+    color:darkslategray;
+    overflow: auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li * {
+    float: left;
+}
+
+#todo {
+    font-size: 35px;
+    margin-left: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color:white;
+    
+}
+.para{
+    margin-bottom:-15px;
+    padding-top: 10px;
+}
+.filter, searchbox{
+    padding:0;
+    height: 35px;
+    width: 500px;
+    float: left;
+}
+.filter{
+    margin-left: 150px;
+}
+.searchbox{
+    margin-left: 50px;
+}
+
+.but {
+    background-color: black;
+    /* margin-left: 350px; */
+    border-radius: 5px;
+    /* display: block; */
+    margin-left: 65px;
+}
+.butAdd {
+    background-color: black;
+    /* margin-left: 350px; */
+    border-radius: 5px;
+    /* display: block; */
+    margin-left: 80px;
+
+}
+
+li,
+h3 {
+    clear: both;
+    list-style: none;
+}
+
+.category {
+    margin-left: 60px;
+}
+
+button {
+    background-color: black;
+    border-radius: 2px;
+    color: #888;
+    font-size: 15px;
+    width: 60px;
+    margin: 10px 0 0;
+    font-family: Lato, sans-serif;
+    cursor: pointer;
+}
+
+button:hover {
+    color: lightgreen;
+}
+
+/* Heading */
+
+h3,
+label[for='new-task'] {
+    color:black;
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+    border-bottom: 2px solid #333;
+    padding: 30px 0 10px;
+    margin: auto;
+    text-transform: uppercase;
+}
+
+.inputtask{
+    margin: auto;
+    font-size: 18px;
+    line-height: 18px;
+    height: 18px;
+    padding: 10px;
+    border: 1px solid black;
+    background:lightgoldenrodyellow;
+    border-radius: 6px;
+    font-family: Lato, sans-serif;
+    color: darkslategrey;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+/* New Task */
+
+label[for='new-task'] {
+    display: block;
+    margin: 0 0 20px;
+}
+
+input#new-task {
+    float: left;
+    width: 200px;
+}
+
+p>button:hover {
+    color: #0FC57C;
+    /*for add button*/
+}
+
+/* Task list */
+
+li {
+    overflow: hidden;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+li>input[type="checkbox"] {
+    margin: 0 10px;
+    position: relative;
+    top: 15px;
+}
+
+li>label {
+    font-size: 18px;
+    line-height: 40px;
+    width: 318px;
+    padding: 0 0 0 11px;
+}
+
+li>input[type="text"] {
+    width: 226px;
+    /*for the edit text box*/
+}
+
+li>.delete:hover {
+    color: #CF2323;
+}
+
+/* Completed */
+
+#completed-tasks label {
+    text-decoration: line-through;
+    color: lightsalmon;
+}
+
+/* Edit Task */
+
+ul li input[type=text] {
+    display: none;
+}
+
+ul li.editMode input[type=text] {
+    display: block;
+}
+
+ul li.editMode label {
+    display: none;
+}
+
+.updateTask{
+    border-color: 1px solid #CF2323;
+    
+
+}
